@@ -1,0 +1,934 @@
+/* style.css - Assam Postal Circle Official Website */
+
+/**
+ * Table of Contents:
+ * 1. Base Styles
+ * 2. Header & Navigation
+ * 3. Main Content
+ * 4. Footer
+ * 5. Quick Links Section
+ * 6. Track & Trace Section
+ * 7. Find Post Office Section
+ * 8. Media Queries (Responsive Design)
+ */
+
+/* ==================== 1. BASE STYLES ==================== */
+/**
+ * Sets up foundational styles for the entire document
+ * Mobile-first approach used throughout
+ */
+:root {
+	--primary-color: #007bff;
+	--secondary-color: #ffc107;
+	--text-color: #333;
+	--light-bg: #f0f8ff;
+	--white: #fff;
+	--dark-bg: #333;
+	--light-text: #ddd;
+	--border-radius: 8px;
+	--box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--transition: all 0.3s ease;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: var(--light-bg);
+	line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: var(--text-color);
+}
+
+/* ==================== 2. HEADER & NAVIGATION ==================== */
+/**
+ * Styles for header and navigation components
+ * Includes responsive navigation that transforms from hamburger menu to horizontal nav
+ */
+header {
+	background-color: var(--white);
+	box-shadow: var(--box-shadow);
+	padding: 10px 20px;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+/* Logo styles */
+.logo {
+	font-size: 1.3em;
+	font-weight: bold;
+	color: var(--primary-color);
+	transition: transform 0.2s ease-in-out;
+}
+.logo img {
+	width: 75px;
+	height: 2.5rem;
+	margin-right: 0.5rem;
+}
+.logo:hover {
+	transform: scale(1.05);
+}
+nav .logo a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #af3f3c;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+	display: block;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	outline: none;
+}
+.menu-toggle span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	background-color: var(--text-color);
+	margin: 5px auto;
+	transition: var(--transition);
+}
+
+/* Navigation links */
+.nav-links {
+	display: none;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	padding: 0;
+}
+.nav-links.open {
+	display: block;
+}
+.nav-links > li {
+	margin: 10px 0;
+	list-style: none;
+}
+.nav-links > li > a {
+	display: block;
+	text-decoration: none;
+	color: var(--text-color);
+	transition: var(--transition);
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+.nav-links > li > a:hover {
+	color: var(--primary-color);
+	background-color: #f8f9fa;
+}
+
+/* Submenu styles */
+.nav-links li ul {
+	list-style: none;
+	padding: 0;
+	margin-left: 20px;
+	display: none;
+	background-color: #f8f9fa;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+.nav-links li ul li {
+	margin: 5px 0;
+}
+.nav-links li ul li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	color: #555;
+}
+.nav-links li ul li a:hover {
+	color: var(--primary-color);
+}
+
+/* ==================== 3. MAIN CONTENT ==================== */
+/**
+ * Styles for the main content area
+ */
+main {
+	margin: 20px;
+	padding: 20px;
+	background-color: var(--white);
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+	flex-grow: 1;
+}
+
+main section {
+	margin-bottom: 30px;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background-color: var(--white);
+}
+
+main section h2 {
+	font-size: 1.5em;
+	color: var(--text-color);
+	margin-bottom: 10px;
+	border-bottom: 2px solid #eee;
+	padding-bottom: 8px;
+}
+
+main section ul {
+	list-style: disc;
+	padding-left: 25px;
+}
+
+main section ul li {
+	margin-bottom: 6px;
+}
+
+main section article {
+	padding: 10px;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	background-color: #f9f9f9;
+}
+
+main section article h3 {
+	font-size: 1.1em;
+	color: var(--text-color);
+	margin-top: 0;
+	margin-bottom: 3px;
+}
+
+main section article p.date {
+	color: #777;
+	font-size: 0.8em;
+	margin-bottom: 8px;
+}
+
+/* ==================== 4. FOOTER ==================== */
+/**
+ * Styles for the footer section
+ */
+footer {
+	background-color: var(--dark-bg);
+	color: var(--white);
+	padding: 20px 0;
+	text-align: center;
+}
+
+.footer-links {
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.footer-links ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer-links ul li {
+	margin: 10px 0;
+}
+
+.footer-links ul li a {
+	text-decoration: none;
+	color: var(--light-text);
+	transition: var(--transition);
+}
+
+.footer-links ul li a:hover {
+	color: var(--white);
+	text-decoration: underline;
+}
+
+.copyright {
+	margin-top: 15px;
+	font-size: 0.8em;
+	opacity: 0.8;
+}
+
+/* ==================== 5. QUICK LINKS SECTION ==================== */
+/**
+ * Styles for the quick links/icon navigation section
+ */
+.quick-links {
+	margin-bottom: 2rem;
+}
+
+.quick-links-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.quick-link-button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	background-color: var(--white);
+	border-radius: 0.5rem;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	color: var(--text-color);
+	text-align: center;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.quick-link-button:hover {
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	background-color: var(--light-bg);
+}
+
+.quick-link-button img {
+	height: 3rem;
+	margin-bottom: 0.5rem;
+}
+
+.quick-link-button {
+	position: relative;
+	padding: 15px 30px; /* Adjust padding as needed */
+	border-radius: 5px;
+	background-color: #f0f0f0; /* Adjust background color */
+	color: #333; /* Adjust text color */
+	text-decoration: none;
+	overflow: hidden; /* Clip the pseudo-elements */
+}
+*/
+/* ==================== 6. TRACK & TRACE SECTION ==================== */
+/**
+ * Styles for the package tracking form
+ */
+.track-trace {
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.track-trace .container {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.track-trace input[type="text"] {
+	padding: 10px;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	flex-grow: 1;
+	min-width: 0;
+}
+
+.track-trace label {
+	margin-right: 5px;
+	font-size: 0.9em;
+	color: #495057;
+}
+
+.track-trace .button {
+	padding: 10px 20px;
+	background-color: var(--secondary-color);
+	color: black;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: var(--transition);
+}
+
+.track-trace .button:hover {
+	background-color: yellow;
+}
+
+/* ==================== 7. FIND POST OFFICE SECTION ==================== */
+/**
+ * Styles for the post office locator form
+ */
+.find-post-office {
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.find-post-office .container {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.find-post-office input[type="text"] {
+	padding: 10px;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	flex-grow: 1;
+	min-width: 0;
+}
+
+.find-post-office label {
+	margin-right: 5px;
+	font-size: 0.9em;
+	color: #495057;
+}
+
+.find-post-office .button {
+	padding: 10px 20px;
+	background-color: var(--secondary-color);
+	color: black;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: var(--transition);
+}
+
+.find-post-office .button:hover {
+	background-color: yellow;
+}
+
+/* ==================== 8. MEDIA QUERIES ==================== */
+/**
+ * Responsive design adjustments for different screen sizes
+ */
+
+/* Tablet and larger screens (≥768px) */
+@media (min-width: 768px) {
+	header {
+		padding: 15px 30px;
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.nav-links {
+		display: flex;
+		flex-direction: row;
+		margin-top: 0;
+		width: auto;
+		text-align: left;
+		padding: 0;
+	}
+
+	.nav-links > li {
+		margin-left: 20px;
+		margin-bottom: 0;
+		position: relative;
+	}
+
+	.nav-links > li:first-child {
+		margin-left: 0;
+	}
+
+	.nav-links > li > a {
+		padding: 8px 12px;
+	}
+
+	.nav-links > li > ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: var(--white);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		border: 1px solid #ddd;
+		border-top: none;
+		z-index: 10;
+		min-width: 150px;
+	}
+
+	.nav-links > li:hover > ul {
+		display: block;
+	}
+
+	.nav-links > li > ul li {
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+
+	.nav-links > li > ul li a {
+		padding: 10px 15px;
+		display: block;
+	}
+
+	main {
+		margin-top: 30px;
+		padding: 30px;
+	}
+
+	main section {
+		padding: 20px;
+	}
+
+	main section h2 {
+		font-size: 1.7em;
+	}
+
+	main section article h3 {
+		font-size: 1.2em;
+	}
+
+	footer {
+		padding: 30px 0;
+	}
+
+	.footer-links {
+		padding: 0 30px;
+	}
+
+	.footer-links ul {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.footer-links ul li {
+		margin: 0 15px;
+	}
+
+	/* Adjust form layouts for tablet */
+	.track-trace .container,
+	.find-post-office .container {
+		flex-direction: row;
+	}
+}
+
+/* Desktop screens (≥1280px) */
+@media (min-width: 1280px) {
+	nav {
+		max-width: 1280px;
+	}
+
+	main {
+		max-width: 1280px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.logo {
+		font-size: 1.7em;
+	}
+
+	.nav-links > li {
+		margin-left: 25px;
+	}
+
+	main section h2 {
+		font-size: 2em;
+	}
+}
+
+/* Small screens (≤600px) */
+@media (max-width: 600px) {
+	.track-trace .container,
+	.find-post-office .container {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px;
+	}
+
+	.track-trace input[type="text"],
+	.find-post-office input[type="text"] {
+		width: 100%;
+	}
+	/* Hero Section Styles */
+	.hero-section {
+		display: flex;
+		padding: 40px 20px;
+		align-items: center;
+		gap: 30px;
+	}
+
+	.hero-image {
+		flex: 1;
+	}
+
+	.hero-image img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.hero-text {
+		flex: 1;
+	}
+
+	.hero-text h1 {
+		font-size: 2.5rem;
+		margin-bottom: 15px;
+		color: var(--primary-color); /* Using primary color for heading */
+	}
+
+	.hero-text p {
+		line-height: 1.6;
+		margin-bottom: 20px;
+		color: #555;
+	}
+
+	.hero-text .button {
+		display: inline-block;
+		background-color: var(
+			--secondary-color
+		); /* Using secondary color for button */
+		color: var(--dark-bg); /* Dark text on secondary background */
+		padding: 10px 20px;
+		text-decoration: none;
+		border-radius: 5px;
+		font-weight: bold;
+		transition: var(--transition);
+	}
+
+	.hero-text .button:hover {
+		background-color: yellow; /* Slightly different hover effect */
+		color: var(--text-color);
+	}
+
+	/* Mobile View Styles for Hero Section */
+	@media (max-width: 768px) {
+		.hero-section {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.hero-image {
+			margin-bottom: 20px;
+		}
+
+		.hero-text h1 {
+			font-size: 2rem;
+		}
+	}
+}
+
+/* Menu toggle animation */
+.menu-toggle.open span:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+	opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+/* Testimonials Section */
+.testimonials {
+	background-color: #f9f9f9;
+}
+
+.testimonial-container {
+	display: flex;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	padding-top: 20px;
+}
+
+.testimonial {
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.testimonial p {
+	margin-bottom: 15px;
+	font-style: italic;
+	color: #555;
+}
+
+.testimonial .author {
+	font-weight: bold;
+	color: #333;
+}
+/* Hero Section Styles */
+.hero-section {
+	display: flex;
+	padding: 20px;
+	align-items: center;
+	gap: 30px;
+}
+
+.hero-image {
+	flex: 1;
+}
+
+.hero-image img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.hero-text {
+	flex: 1;
+}
+
+.hero-text h1 {
+	font-size: 2.5rem;
+	margin-bottom: 15px;
+	color: #2c3e50;
+}
+
+.hero-text p {
+	line-height: 1.6;
+	margin-bottom: 20px;
+	color: #555;
+}
+
+.hero-text .button {
+	display: inline-block;
+	background-color: var(--primary-color);
+	color: var(--white);
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.hero-text .button:hover {
+	background-color: #0056b3;
+}
+/* Hero Section Styles */
+.hero-section {
+	display: flex;
+	padding: 40px 20px;
+	align-items: center;
+	gap: 30px;
+}
+
+.hero-image {
+	flex: 1;
+	display: flex; /* To center the folded rectangle if needed */
+	justify-content: center; /* To center the folded rectangle if needed */
+	align-items: center; /* To center the folded rectangle if needed */
+}
+
+/* CSS for the folded rectangle shape around the image */
+.folded-rectangle {
+	--r: 40px; /* radius */
+
+	width: 300px; /* Adjust as needed */
+	aspect-ratio: 1.1; /* Adjust as needed */
+	background: #fff44f; /* This will be the background color of the shape */
+	border-radius: var(--r) 0 / calc(2 * var(--r)) 0;
+	padding-block: var(--r);
+	--_m: #0000 100%, #000 calc(100% + 1px);
+	mask: conic-gradient(#000 0 0) content-box,
+		radial-gradient(var(--r) at 100% 100%, var(--_m)) 0 100% no-repeat,
+		radial-gradient(var(--r) at 0 0, var(--_m)) 100% 0 no-repeat;
+	mask-size: var(--r) var(--r);
+	display: flex; /* To center the image inside */
+	justify-content: center; /* To center the image inside */
+	align-items: center; /* To center the image inside */
+	overflow: hidden; /* To contain the image within the shape */
+}
+
+.folded-rectangle img {
+	display: block;
+	width: 100%; /* Make the image fill the folded rectangle */
+	height: auto;
+	object-fit: contain; /* Ensure the image covers the area without distortion */
+}
+
+.hero-text {
+	flex: 1;
+}
+
+.hero-text h2 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+	color: black; /* Using primary color for heading */
+	border-bottom: none;
+}
+
+.hero-text p {
+	margin-bottom: 10px;
+	color: black;
+}
+
+/* Mobile View Styles for Hero Section */
+@media (max-width: 768px) {
+	.hero-section {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.hero-image {
+		margin-bottom: 20px;
+	}
+
+	.hero-text h1 {
+		font-size: 2rem;
+	}
+}
+/* Styles for the dropdown container */
+
+/* Styles for the label */
+label[for="selectplan"] {
+	display: inline; /* Make the label appear on its own line */
+	margin-bottom: 5px; /* Add some space between the label and the dropdown */
+	font-size: 1em; /* Adjust font size as needed */
+	color: #333; /* Adjust text color as needed */
+	font-weight: bold; /* Make the label text bold */
+}
+
+/* Styles for the select element (dropdown) */
+select#selectplan {
+	padding: 10px; /* Add padding inside the dropdown */
+	border: 1px solid #ccc; /* Add a border */
+	border-radius: 5px; /* Add rounded corners */
+	font-size: 1em; /* Adjust font size as needed */
+	color: #555; /* Adjust text color as needed */
+	width: 250px; /* Set a specific width for the dropdown */
+	max-width: 100%; /* Make it responsive within its container */
+	box-sizing: border-box; /* Include padding and border in the element's total width and height */
+	appearance: none; /* Remove default browser styling for a more consistent look */
+	background-image: url('data:image/svg+xml;utf8,<svg fill="%23555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Add a down arrow icon */
+	background-repeat: no-repeat;
+	background-position-x: calc(100% - 10px);
+	background-position-y: 50%;
+	cursor: pointer; /* Change cursor to indicate it's interactive */
+}
+
+/* Style for the dropdown options (optional, but can be useful for customization) */
+select#selectplan option {
+	padding: 8px;
+	font-size: 1em;
+	color: #333;
+}
+
+/* Style for the dropdown when focused (optional) */
+select#selectplan:focus {
+	outline: none; /* Remove the default focus outline */
+	border-color: var(--primary-color); /* Use your primary color for focus */
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle focus shadow */
+}
+/* CSS for the "What we offer" section */
+.offerings {
+	padding: 30px 20px;
+	background-color: var(
+		--light-bg
+	); /* Use a light background for the section */
+}
+
+.offerings h2 {
+	font-size: 2em;
+	color: var(--primary-color);
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+/* Container for the plan cards */
+.plan-cards-container {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(300px, 1fr)
+	); /* Responsive grid layout */
+	gap: 20px;
+	padding: 20px 0;
+}
+
+/* Style for each individual plan card */
+.plan-card {
+	background-color: var(--white);
+	border: 1px solid #ddd;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	padding: 20px;
+	transition: var(--transition);
+}
+
+.plan-card:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	transform: translateY(-5px);
+}
+
+.plan-card h3 {
+	font-size: 1.3em;
+	color: var(--text-color);
+	margin-top: 0;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #eee;
+	padding-bottom: 8px;
+}
+
+.plan-card p {
+	color: var(--text-color);
+	line-height: 1.6;
+	margin-bottom: 10px;
+	font-size: 0.95em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+	.plan-cards-container {
+		grid-template-columns: 1fr; /* Stack cards on smaller screens */
+	}
+}
+
+/* CSS for the Call to Action Section */
+.call-to-action {
+	padding: 40px 20px;
+	background-color: var(--white); /* Or any background color you prefer */
+	text-align: center;
+}
+
+.call-to-action h2 {
+	font-size: 1.8em;
+	color: var(--text-color);
+	margin-bottom: 30px;
+}
+
+.cta-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.cta-buttons button {
+	padding: 15px 30px;
+	font-size: 1em;
+	font-weight: bold;
+	color: var(--dark-bg); /* Adjust text color as needed */
+	background-color: var(--secondary-color);
+	border: none;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: background-color var(--transition);
+}
+
+.cta-buttons button:hover {
+	background-color: yellow;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+	.cta-buttons {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cta-buttons button {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}
